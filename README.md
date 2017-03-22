@@ -20,7 +20,7 @@ Análisis Exploratorio Inicial
 </tbody>
 </table>
 <p></p>
-<h2 style="text-align: left;">Importación de Datos</h2>
+<h2 style="text-align: left;">Exploración de Datos</h2>
 <p>Para empezar, vamos a tomar la información del archivo <strong><span style="font-family: 'courier new', courier, monospace;" data-mce-mark="1">RightToWorkLaw.txt</span></strong> almacenado en la plataforma <a href="https://github.com/karlosmantilla/importacion" title="Enlace a GitHub" target="_blank">GitHub</a> y en <a href="https://www.dropbox.com/s/i0pnh74xmtnaopx/RightToWorkLaw.txt?dl=0" title="Enlace a Dropbox" target="_blank">dropbox</a>. Descargado el archivo se procede a importarlo. Para este caso, se va a utilizar la acción básica de copiar y pegar; para ello se abre el archivo con el bloc de notas, se copia el contenido y se ejecuta el siguiente comando:</p>
 <pre><span style="color: #ff0000;"><code class="r">&gt; datos.cp &lt;- read.delim("clipboard")
 </code></span></pre>
