@@ -98,11 +98,11 @@ RTWL   -0.47 -0.28 -0.79 -0.30 -0.29  -0.51  1.00</span>
 <p>Ahora es posible graficar la matriz de correlaciones usando la siguiente linea de comandos:</p>
 <pre><span style="color: #ff0000;"><code class="r">&gt; ggplot(data = melted_cormat, aes(x=Var1, y=Var2, fill=value)) + geom_tile()
 </code></span></pre>
-<p><img src="images/matrizxorr1.png" width="50%" height="42" alt="matriz de correlaciones" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p><img src="images/matrizxorr1.png" width="50%" height="" alt="matriz de correlaciones" style="display: block; margin-left: auto; margin-right: auto;" /></p>
 <p>Se observa en el lado derecho de la gráfica la nomenclatura para interpretar los valores del gráfico. Existe otra gráfica más simple para su interpretación y se construye como se indica a continuación:</p>
 <pre><span style="color: #ff0000;"><code class="r">&gt; ggcorr(datos.cp, palette = "RdBu", label = TRUE)
 </code></span></pre>
-<p><img src="images/matrizxorr2.png" width="50%" height="42" alt="Matriz de Correlaciones 2" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p><img src="images/matrizxorr2.png" width="50%" height="" alt="Matriz de Correlaciones 2" style="display: block; margin-left: auto; margin-right: auto;" /></p>
 <p>Con la información suministrada en este gráfico se puede considerar las posibles configuraciones del modelo a construir. Así que se procede a construir un diagrama de dispersión para las variables de interés en este ejercicio; para ello se emplea la siguiente línea de comandos (recuerde la explicación sobre los argumentos dada en clase):</p>
 <pre><span style="color: #ff0000;"><code class="r">&gt; win.graph(10,6,6) # Sirve para determinar las dimensiones de la imagen: 10 pts de ancho, 6 pts de alto y Tamaño de Fuente 6
 &gt; ggplot(datos.cp, aes(x=Income, y=URate)) + geom_point(size=3, col="darkgreen")
