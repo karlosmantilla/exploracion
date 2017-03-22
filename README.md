@@ -107,16 +107,16 @@ RTWL   -0.47 -0.28 -0.79 -0.30 -0.29  -0.51  1.00</span>
 <pre><span style="color: #ff0000;"><code class="r">&gt; win.graph(10,6,6) # Sirve para determinar las dimensiones de la imagen: 10 pts de ancho, 6 pts de alto y Tamaño de Fuente 6
 &gt; ggplot(datos.cp, aes(x=Income, y=URate)) + geom_point(size=3, col="darkgreen")
 </code></span></pre>
-<p><img src="images/dispersion2.png" width="70%" height="42" alt="Dispersión" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p><img src="images/dispersion2.png" width="70%" height="" alt="Dispersión" style="display: block; margin-left: auto; margin-right: auto;" /></p>
 <p></p>
 <p>Es posible incluir más variables que permitan intuir el comportamiento del modelo; para el ejemplo se va a incluir el tamaño poblacional para analizar las posibles influencias de esta variable:</p>
 <pre><span style="color: #ff0000;"><code class="r">&gt; ggplot(datos.cp, aes(x=Income, y=URate)) +  geom_point(aes(size=Pop),col="darkgreen")
 </code></span></pre>
-<p style="text-align: center;"><img src="images/dispersion3.png" width="75%" height="45" alt="dispersión3" /></p>
+<p style="text-align: center;"><img src="images/dispersion3.png" width="75%" height="" alt="dispersión3" /></p>
 <p style="text-align: left;">Son muchas las opciones gráficas que hay. Por ejemplo, es posible incluir el nombre de las ciudades para identificar las observaciones en el diagrama de dispersión:</p>
 <pre><span style="color: #ff0000;"><code class="r">&gt; ggplot(datos.cp, aes(x=Income, y=URate)) +  geom_point(aes(size=Pop),col="darkgreen")+ geom_text_repel(label=rownames(datos.cp))
 </code></span></pre>
-<p style="text-align: center;"><img src="images/dispersion4.png" width="75%" height="45" alt="Dispersion" /></p>
+<p style="text-align: center;"><img src="images/dispersion4.png" width="75%" height="" alt="Dispersion" /></p>
 <p style="text-align: left;"></p>
 <p>O se puede añadir un gráfico de densidad bidimensional para identificar los posibles centros de atracción de los datos:</p>
 <pre><span style="color: #ff0000;"><code class="r">&gt; ggplot(datos.cp, aes(x=Income, y=URate)) +  geom_point(aes(size=Pop),col="darkgreen")+ geom_text_repel(label=rownames(datos.cp)) + geom_density_2d()
@@ -129,13 +129,13 @@ RTWL   -0.47 -0.28 -0.79 -0.30 -0.29  -0.51  1.00</span>
 <p>También es posible graficar otro tipo de regresión y combinar con más elementos:</p>
 <pre><span style="color: #ff0000;"><code class="r">&gt; ggplot(datos.cp, aes(x=Income, y=URate)) +  geom_point(aes(size=Pop),col="darkgreen")+ geom_text_repel(label=rownames(datos.cp)) +  geom_smooth()+ geom_density_2d()
 </code></span></pre>
-<p style="text-align: center;"><img src="images/regression2.png" width="75%" height="45" alt="Regresion Loess" /></p>
+<p style="text-align: center;"><img src="images/regression2.png" width="75%" height="" alt="Regresion Loess" /></p>
 <p style="text-align: left;">O se puede incluir el efecto de implementación o no del estatuto RTWL</p>
 <pre><span style="color: #ff0000;"><code class="r">&gt; ggplot(datos.cp,aes(x=Income, y=URate, color=as.factor(RTWL))) + geom_point(aes(size=Pop))+ scale_color_manual(values = c('#999999','#E69F00')) + theme(legend.position=c(0,1), legend.justification=c(0,1))+ geom_smooth(method=lm)+ geom_density_2d()
 </code></span></pre>
-<p style="text-align: center;"><img src="images/regresionanova.png" width="75%" height="45" alt="anova" /></p>
+<p style="text-align: center;"><img src="images/regresionanova.png" width="75%" height="" alt="anova" /></p>
 <p style="text-align: left;">Finalmente, es posible incluir otros gráficos como diagramas de caja:</p>
 <pre><span style="color: #ff0000;"><code class="r">&gt; ggplot(datos.cp,aes(y = URate, x = factor(RTWL)))  + geom_boxplot()+ labs(x="Application RTWL",y="Unemployed Rate")+  stat_summary(fun.y=mean, colour="red", geom="point", shape=20, size=3,show_guide = FALSE)
 </code></span></pre>
-<p style="text-align: left;"><img src="images/boxplot.png" width="50%" height="50" alt="Boxplot" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: left;"><img src="images/boxplot.png" width="50%" height="" alt="Boxplot" style="display: block; margin-left: auto; margin-right: auto;" /></p>
 <p style="text-align: left;">Recuerde que una adecuada exploración gráfica ayuda a evitar construir modelos innecesarios</p>
