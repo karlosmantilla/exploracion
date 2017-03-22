@@ -121,11 +121,11 @@ RTWL   -0.47 -0.28 -0.79 -0.30 -0.29  -0.51  1.00</span>
 <p>O se puede añadir un gráfico de densidad bidimensional para identificar los posibles centros de atracción de los datos:</p>
 <pre><span style="color: #ff0000;"><code class="r">&gt; ggplot(datos.cp, aes(x=Income, y=URate)) +  geom_point(aes(size=Pop),col="darkgreen")+ geom_text_repel(label=rownames(datos.cp)) + geom_density_2d()
 </code></span></pre>
-<p style="text-align: center;"><img src="http://tic.uis.edu.co/ava/draftfile.php/83778/user/draft/722814207/densidad1.png" width="75%" height="45" alt="densidad" /></p>
+<p style="text-align: center;"><img src="imames/densidad1.png" width="75%" height="" alt="densidad" /></p>
 <p>O incluir la recta de regresión y el intervalo de confianza para tener una aproximación del posible modelo:</p>
 <pre><span style="color: #ff0000;"><code class="r">&gt; ggplot(datos.cp, aes(x=Income, y=URate)) +  geom_point(aes(size=Pop),col="darkgreen")+ geom_text_repel(label=rownames(datos.cp)) +  geom_smooth(method=lm)
 </code></span></pre>
-<p><img src="images/regresion.png" width="75%" height="45" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p><img src="images/regresion.png" width="75%" height="" style="display: block; margin-left: auto; margin-right: auto;" /></p>
 <p>También es posible graficar otro tipo de regresión y combinar con más elementos:</p>
 <pre><span style="color: #ff0000;"><code class="r">&gt; ggplot(datos.cp, aes(x=Income, y=URate)) +  geom_point(aes(size=Pop),col="darkgreen")+ geom_text_repel(label=rownames(datos.cp)) +  geom_smooth()+ geom_density_2d()
 </code></span></pre>
