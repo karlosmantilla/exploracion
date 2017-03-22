@@ -121,7 +121,7 @@ RTWL   -0.47 -0.28 -0.79 -0.30 -0.29  -0.51  1.00</span>
 <p>O se puede añadir un gráfico de densidad bidimensional para identificar los posibles centros de atracción de los datos:</p>
 <pre><span style="color: #ff0000;"><code class="r">&gt; ggplot(datos.cp, aes(x=Income, y=URate)) +  geom_point(aes(size=Pop),col="darkgreen")+ geom_text_repel(label=rownames(datos.cp)) + geom_density_2d()
 </code></span></pre>
-<p style="text-align: center;"><img src="imames/densidad1.png" width="75%" height="" alt="densidad" /></p>
+<p style="text-align: center;"><img src="images/densidad1.png" width="75%" height="" alt="densidad" /></p>
 <p>O incluir la recta de regresión y el intervalo de confianza para tener una aproximación del posible modelo:</p>
 <pre><span style="color: #ff0000;"><code class="r">&gt; ggplot(datos.cp, aes(x=Income, y=URate)) +  geom_point(aes(size=Pop),col="darkgreen")+ geom_text_repel(label=rownames(datos.cp)) +  geom_smooth(method=lm)
 </code></span></pre>
