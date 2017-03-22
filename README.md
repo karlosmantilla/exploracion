@@ -6,7 +6,7 @@ Análisis Exploratorio Inicial
 <td style="text-align: center; border-radius: 5px;" colspan="2" bgcolor="#3366CC" width="80%"><span style="font-size: x-large; font-family: arial, helvetica, sans-serif; color: #ffffff;" data-mce-mark="1">EXPLORACIÓN DE DATOS<br /></span></td>
 </tr>
 <tr onmouseover="this.style.backgroundColor = '#F5F5F5'" onmouseout="this.style.backgroundColor = '#fff'" style="background-color: #ffffff;">
-<td style="text-align: center; width: 20%;" valign="top"><img src="http://tic.uis.edu.co/ava/draftfile.php/83778/user/draft/722814207/rtwl.png" width="100%" height="162" alt="rtwl" /></td>
+<td style="text-align: center; width: 20%;" valign="top"><img src="images/rtwl.png" width="100%" height="162" alt="rtwl" /></td>
 <td style="text-align: center; width: 80%;" valign="top">
 <p align="justify"></p>
 <p align="justify"><span style="font-size: x-large; color: #003366;" data-mce-mark="1">Right to Work Law</span></p>
@@ -98,25 +98,25 @@ RTWL   -0.47 -0.28 -0.79 -0.30 -0.29  -0.51  1.00</span>
 <p>Ahora es posible graficar la matriz de correlaciones usando la siguiente linea de comandos:</p>
 <pre><span style="color: #ff0000;"><code class="r">&gt; ggplot(data = melted_cormat, aes(x=Var1, y=Var2, fill=value)) + geom_tile()
 </code></span></pre>
-<p><img src="http://tic.uis.edu.co/ava/draftfile.php/83778/user/draft/722814207/matrizxorr1.png" width="50%" height="42" alt="matriz de correlaciones" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p><img src="images/matrizxorr1.png" width="50%" height="42" alt="matriz de correlaciones" style="display: block; margin-left: auto; margin-right: auto;" /></p>
 <p>Se observa en el lado derecho de la gráfica la nomenclatura para interpretar los valores del gráfico. Existe otra gráfica más simple para su interpretación y se construye como se indica a continuación:</p>
 <pre><span style="color: #ff0000;"><code class="r">&gt; ggcorr(datos.cp, palette = "RdBu", label = TRUE)
 </code></span></pre>
-<p><img src="http://tic.uis.edu.co/ava/draftfile.php/83778/user/draft/722814207/matrizxorr2.png" width="50%" height="42" alt="Matriz de Correlaciones 2" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p><img src="images/matrizxorr2.png" width="50%" height="42" alt="Matriz de Correlaciones 2" style="display: block; margin-left: auto; margin-right: auto;" /></p>
 <p>Con la información suministrada en este gráfico se puede considerar las posibles configuraciones del modelo a construir. Así que se procede a construir un diagrama de dispersión para las variables de interés en este ejercicio; para ello se emplea la siguiente línea de comandos (recuerde la explicación sobre los argumentos dada en clase):</p>
 <pre><span style="color: #ff0000;"><code class="r">&gt; win.graph(10,6,6) # Sirve para determinar las dimensiones de la imagen: 10 pts de ancho, 6 pts de alto y Tamaño de Fuente 6
 &gt; ggplot(datos.cp, aes(x=Income, y=URate)) + geom_point(size=3, col="darkgreen")
 </code></span></pre>
-<p><img src="http://tic.uis.edu.co/ava/draftfile.php/83778/user/draft/722814207/dispersion2.png" width="70%" height="42" alt="Dispersión" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p><img src="images/dispersion2.png" width="70%" height="42" alt="Dispersión" style="display: block; margin-left: auto; margin-right: auto;" /></p>
 <p></p>
 <p>Es posible incluir más variables que permitan intuir el comportamiento del modelo; para el ejemplo se va a incluir el tamaño poblacional para analizar las posibles influencias de esta variable:</p>
 <pre><span style="color: #ff0000;"><code class="r">&gt; ggplot(datos.cp, aes(x=Income, y=URate)) +  geom_point(aes(size=Pop),col="darkgreen")
 </code></span></pre>
-<p style="text-align: center;"><img src="http://tic.uis.edu.co/ava/draftfile.php/83778/user/draft/722814207/dispersion3.png" width="75%" height="45" alt="dispersión3" /></p>
+<p style="text-align: center;"><img src="images/dispersion3.png" width="75%" height="45" alt="dispersión3" /></p>
 <p style="text-align: left;">Son muchas las opciones gráficas que hay. Por ejemplo, es posible incluir el nombre de las ciudades para identificar las observaciones en el diagrama de dispersión:</p>
 <pre><span style="color: #ff0000;"><code class="r">&gt; ggplot(datos.cp, aes(x=Income, y=URate)) +  geom_point(aes(size=Pop),col="darkgreen")+ geom_text_repel(label=rownames(datos.cp))
 </code></span></pre>
-<p style="text-align: center;"><img src="http://tic.uis.edu.co/ava/draftfile.php/83778/user/draft/722814207/dispersion4.png" width="75%" height="45" alt="Dispersion" /></p>
+<p style="text-align: center;"><img src="images/dispersion4.png" width="75%" height="45" alt="Dispersion" /></p>
 <p style="text-align: left;"></p>
 <p>O se puede añadir un gráfico de densidad bidimensional para identificar los posibles centros de atracción de los datos:</p>
 <pre><span style="color: #ff0000;"><code class="r">&gt; ggplot(datos.cp, aes(x=Income, y=URate)) +  geom_point(aes(size=Pop),col="darkgreen")+ geom_text_repel(label=rownames(datos.cp)) + geom_density_2d()
@@ -125,17 +125,17 @@ RTWL   -0.47 -0.28 -0.79 -0.30 -0.29  -0.51  1.00</span>
 <p>O incluir la recta de regresión y el intervalo de confianza para tener una aproximación del posible modelo:</p>
 <pre><span style="color: #ff0000;"><code class="r">&gt; ggplot(datos.cp, aes(x=Income, y=URate)) +  geom_point(aes(size=Pop),col="darkgreen")+ geom_text_repel(label=rownames(datos.cp)) +  geom_smooth(method=lm)
 </code></span></pre>
-<p><img src="http://tic.uis.edu.co/ava/draftfile.php/83778/user/draft/722814207/regresion.png" width="75%" height="45" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p><img src="images/regresion.png" width="75%" height="45" style="display: block; margin-left: auto; margin-right: auto;" /></p>
 <p>También es posible graficar otro tipo de regresión y combinar con más elementos:</p>
 <pre><span style="color: #ff0000;"><code class="r">&gt; ggplot(datos.cp, aes(x=Income, y=URate)) +  geom_point(aes(size=Pop),col="darkgreen")+ geom_text_repel(label=rownames(datos.cp)) +  geom_smooth()+ geom_density_2d()
 </code></span></pre>
-<p style="text-align: center;"><img src="http://tic.uis.edu.co/ava/draftfile.php/83778/user/draft/722814207/regression2.png" width="75%" height="45" alt="Regresion Loess" /></p>
+<p style="text-align: center;"><img src="images/regression2.png" width="75%" height="45" alt="Regresion Loess" /></p>
 <p style="text-align: left;">O se puede incluir el efecto de implementación o no del estatuto RTWL</p>
 <pre><span style="color: #ff0000;"><code class="r">&gt; ggplot(datos.cp,aes(x=Income, y=URate, color=as.factor(RTWL))) + geom_point(aes(size=Pop))+ scale_color_manual(values = c('#999999','#E69F00')) + theme(legend.position=c(0,1), legend.justification=c(0,1))+ geom_smooth(method=lm)+ geom_density_2d()
 </code></span></pre>
-<p style="text-align: center;"><img src="http://tic.uis.edu.co/ava/draftfile.php/83778/user/draft/722814207/regresionanova.png" width="75%" height="45" alt="anova" /></p>
+<p style="text-align: center;"><img src="images/regresionanova.png" width="75%" height="45" alt="anova" /></p>
 <p style="text-align: left;">Finalmente, es posible incluir otros gráficos como diagramas de caja:</p>
 <pre><span style="color: #ff0000;"><code class="r">&gt; ggplot(datos.cp,aes(y = URate, x = factor(RTWL)))  + geom_boxplot()+ labs(x="Application RTWL",y="Unemployed Rate")+  stat_summary(fun.y=mean, colour="red", geom="point", shape=20, size=3,show_guide = FALSE)
 </code></span></pre>
-<p style="text-align: left;"><img src="http://tic.uis.edu.co/ava/draftfile.php/83778/user/draft/722814207/boxplot.png" width="50%" height="50" alt="Boxplot" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: left;"><img src="images/boxplot.png" width="50%" height="50" alt="Boxplot" style="display: block; margin-left: auto; margin-right: auto;" /></p>
 <p style="text-align: left;">Recuerde que una adecuada exploración gráfica ayuda a evitar construir modelos innecesarios</p>
