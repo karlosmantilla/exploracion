@@ -6,7 +6,7 @@ Análisis Exploratorio Inicial
 <td style="text-align: center; border-radius: 5px;" colspan="2" bgcolor="#3366CC" width="80%"><span style="font-size: x-large; font-family: arial, helvetica, sans-serif; color: #ffffff;" data-mce-mark="1">EXPLORACIÓN DE DATOS<br /></span></td>
 </tr>
 <tr onmouseover="this.style.backgroundColor = '#F5F5F5'" onmouseout="this.style.backgroundColor = '#fff'" style="background-color: #ffffff;">
-<td style="text-align: center; width: 20%;" valign="top"><img src="images/rtwl.png" width="100%" height="162" alt="rtwl" /></td>
+<td style="text-align: center; width: 20%;" valign="top"><img src="images/rtwl.png" width="100%" height="" alt="rtwl" /></td>
 <td style="text-align: center; width: 80%;" valign="top">
 <p align="justify"></p>
 <p align="justify"><span style="font-size: x-large; color: #003366;" data-mce-mark="1">Right to Work Law</span></p>
