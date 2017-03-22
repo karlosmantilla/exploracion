@@ -61,7 +61,7 @@ Baton Rouge  99  255  16.0  411725  3965   1620    1
 Boston      363 1257  24.4 3914071  4928   5634    0
 </span></code></pre>
 <p>Ahora, se procede a construir la matriz de correlaciones:</p>
-<pre><code class="r"><span style="color: #ff0000;">&gt; cor.mat &lt;- round=(cor=(datos.cp=),2)</span><br /><span style="color: #ff0000;">&gt; cor.mat</span>
+<pre><code class="r"><span style="color: #ff0000;">&gt; cor.mat &lt;- round(cor(datos.cp),2)</span><br /><span style="color: #ff0000;">&gt; cor.mat</span>
 <span style="color: #003366;">         COL    PD URate   Pop Taxes Income  RTWL
 COL     1.00  0.39  0.27  0.43  0.37   0.29 -0.47
 PD      0.39  1.00  0.42  0.83  0.34   0.07 -0.28
